@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<!-- 
+SPDX-FileCopyrightText: Copyright (c) 2022 Neradoc, https://neradoc.me
+SPDX-License-Identifier: MIT
+ -->
+<head>
+	<meta charset="utf-8" />
+	<title>Circuitpython Libraries Bundler</title>
+	<base href="./" />
+	<link rel="stylesheet" href="assets/bundler/bundler.css" />
+	<script src="assets/extlib/jquery.min.js"></script>
+	<script src="assets/extlib/jszip.min.js"></script>
+	<script src="assets/bundler/bundler.js" defer="true" type="module"></script>
+</head>
+<body>
+<div id="container">
+	<div>
+		<p id="title_block">Libraries Bundler For Circuitpython</p>
+		<div id="filter">
+			<input name="filter" value="" placeholder="Enter library name to filter"/>
+			<button id="clear_search">Clear</button>
+			<button id="deselect_all">Deselect All</button>
+		</div>
+	</div>
+	<div id="drop_zone">
+		<p id="drop_controls">
+			<button class="load_some_files">Load More Files</button>
+			<button id="erase_drop">Remove Files</button>
+		</p>
+		<p id="drop_message">
+			<button class="load_some_files">Select your code.py file</button><br/>
+			Or drop your files here.
+		</p>
+		<p id="dropped_files_list"></p>
+		<img id="drop_loading" src="assets/images/loading_black_small.gif" />
+		<input id="select_files_input" type="file" multiple />
+	</div>
+
+	<div class="title">Modules <span id="nselected"></span></div>
+	<div class="title">Dependencies (<span class="num_deps">0</span>)</div>
+	<div id="modules" class="liste"><img class="loading_image" src="assets/images/loading_black_small.gif"/></div>
+	<div id="dependencies" class="liste"></div>
+	
+	<div></div>
+	<div id="zipit">
+		<button id="zip_button">Create a zip with these modules</button>
+	</div>
+</div>
+<div id="zip_popup">
+	<p id="zip_in_progress">
+		<span class="content">
+		CREATING THE ZIP, PLEASE WAIT<br/>
+		Processing Modules And Files <span class="file_progress"></span><br/>
+		<span class="preparing">Converting To Base-64 For The Link...</span>
+		</span>
+	</p>
+	<p id="zip_link"><a id="zip_a" name="zip">Download the zip with the selected modules.</a></p>
+	<div><button class="close">Close</button></div>
+</div>
+</body>
+</html>
