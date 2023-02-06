@@ -1,8 +1,9 @@
 #!/bin/bash
 
 DIR=$(dirname -- "$(readlink -f "${BASH_SOURCE}")")
-CPDIR="$DIR/build/CIRCUITPY"
-ZIPFILE="$DIR/build/bundle_file.zip"
+BUILD="$DIR/_build"
+CPDIR="$BUILD/CIRCUITPY"
+ZIPFILE="$BUILD/bundle_file.zip"
 
 # default to the project directory
 if [[ "$1" != "" ]]; then
